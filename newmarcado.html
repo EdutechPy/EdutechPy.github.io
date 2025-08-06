@@ -47,8 +47,9 @@
 
   .episodes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   .episode-card {
@@ -114,102 +115,22 @@
     background-color: #218838;
   }
 
-  /* Header styles */
-  header {
-    background-color: #2563eb;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-
-  header .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  header .logo img {
-    height: 40px;
-  }
-
-  header .logo span {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-
-  /* Menu styles */
-  #menu {
-    display: none;
-    position: absolute;
-    top: 64px;
-    right: 16px;
-    background: #2563eb;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    padding: 0.5rem 1rem;
-    z-index: 1000;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 150px;
-  }
-
-  #menu li {
-    list-style: none;
-  }
-
-  #menu a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 0;
-    display: block;
-  }
-
-  /* Hamburger button styles */
-  #menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    align-items: center;
-  }
-
-  #menu-btn svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  /* Responsive styles */
-  @media (max-width: 640px) {
-    #menu {
-      display: none;
+  /* Mejoras para móviles */
+  @media (max-width: 600px) {
+    .episodes {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem;
+      padding: 0 0.2rem;
     }
-
-    #menu-btn {
-      display: flex;
+    .episode-card {
+      padding: 0.6rem;
+      font-size: 0.97rem;
     }
-  }
-
-  @media (min-width: 640px) {
-    #menu {
-      display: flex !important;
-      position: static;
-      background: transparent;
-      box-shadow: none;
-      border-radius: 0;
-      top: auto;
-      right: auto;
-      flex-direction: row;
-      gap: 6px;
+    .episode-card h3 {
+      font-size: 1rem;
     }
-
-    #menu-btn {
-      display: none;
+    .episode-card p {
+      font-size: 0.9rem;
     }
   }
 </style>
@@ -217,46 +138,12 @@
 </head>
 <body>
 
-<!-- Header -->
-<header class="bg-blue-600 text-white py-4 shadow-md sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-    <div class="flex items-center gap-4">
-      <img src="logo.png" alt="Logo EdutechPy" class="h-10">
-      <h1 class="text-2xl font-bold"><a href="index.html" class="hover:underline">EdutechPy</a></h1>
-    </div>
-    <!-- Botón hamburguesa -->
-    <button id="menu-btn" class="sm:hidden focus:outline-none" aria-label="Abrir menú">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-    <!-- Menú de navegación -->
-    <nav>
-      <ul id="menu" class="hidden absolute top-16 right-4 bg-blue-600 rounded shadow-lg sm:static sm:flex sm:flex-row sm:space-x-6 sm:bg-transparent sm:shadow-none sm:rounded-none sm:top-auto sm:right-auto sm:relative sm:items-center text-base flex-col space-y-2 sm:space-y-0 mt-2 sm:mt-0">
-        <li><a href="index.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Inicio</a></li>
-        <li><a href="cursosnew.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Cursos</a></li>
-        <li><a href="recursopy.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Recursos</a></li>
-        <li><a href="#contacto" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Contacto</a></li>
-      </ul>
-    </nav>
+<header>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="logo.png" alt="Logo EdutechPy" style="height: 40px;">
+    <span>EdutechPy | Aprende Python</span>
   </div>
 </header>
-<script>
-  // Menú hamburguesa funcionalidad
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-  // Corrige el menú al cambiar tamaño de pantalla
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 640) {
-      menu.classList.remove('hidden');
-    } else {
-      menu.classList.add('hidden');
-    }
-  });
-</script>
 
 <div class="course-info">
   <h2>🐍 Fundamentos de Python</h2>
