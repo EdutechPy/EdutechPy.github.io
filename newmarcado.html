@@ -218,26 +218,25 @@
 <body>
 
 <!-- Header -->
-<header style="background-color:#2563eb;color:white;" class="py-4 shadow-md sticky top-0 z-50">
-  <div style="max-width:1200px;margin:auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <img src="logo.png" alt="Logo EdutechPy" style="height:40px;">
-      <span style="font-size:1.25rem;font-weight:bold;">EdutechPy | Aprende Python</span>
+<header class="bg-blue-600 text-white py-4 shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+    <div class="flex items-center gap-4">
+      <img src="logo.png" alt="Logo EdutechPy" class="h-10">
+      <h1 class="text-2xl font-bold"><a href="index.html" class="hover:underline">EdutechPy</a></h1>
     </div>
     <!-- Botón hamburguesa -->
-    <button id="menu-btn" class="sm:hidden" aria-label="Abrir menú" style="background:none;border:none;outline:none;display:flex;align-items:center;cursor:pointer;">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:32px;height:32px;">
+    <button id="menu-btn" class="sm:hidden focus:outline-none" aria-label="Abrir menú">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
     <!-- Menú de navegación -->
     <nav>
-      <ul id="menu" style="display:none;position:absolute;top:64px;right:16px;background:#2563eb;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);padding:0.5rem 1rem;z-index:1000;flex-direction:column;gap:10px;min-width:150px;"
-        class="sm:flex sm:static sm:bg-transparent sm:shadow-none sm:rounded-none sm:top-auto sm:right-auto sm:relative sm:flex-row sm:gap-6">
-        <li><a href="index.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Inicio</a></li>
-        <li><a href="cursosnew.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Cursos</a></li>
-        <li><a href="recursopy.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Recursos</a></li>
-        <li><a href="#contacto" style="color:white;text-decoration:none;padding:8px 0;display:block;">Contacto</a></li>
+      <ul id="menu" class="hidden absolute top-16 right-4 bg-blue-600 rounded shadow-lg sm:static sm:flex sm:flex-row sm:space-x-6 sm:bg-transparent sm:shadow-none sm:rounded-none sm:top-auto sm:right-auto sm:relative sm:items-center text-base flex-col space-y-2 sm:space-y-0 mt-2 sm:mt-0">
+        <li><a href="index.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Inicio</a></li>
+        <li><a href="cursosnew.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Cursos</a></li>
+        <li><a href="recursopy.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Recursos</a></li>
+        <li><a href="#contacto" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -246,23 +245,17 @@
   // Menú hamburguesa funcionalidad
   const btn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
-  function toggleMenu() {
-    if (window.innerWidth < 640) {
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    }
-  }
-  btn.addEventListener('click', toggleMenu);
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+  // Corrige el menú al cambiar tamaño de pantalla
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 640) {
-      menu.style.display = 'flex';
+      menu.classList.remove('hidden');
     } else {
-      menu.style.display = 'none';
+      menu.classList.add('hidden');
     }
   });
-  // Inicializa el estado correcto al cargar
-  if (window.innerWidth >= 640) {
-    menu.style.display = 'flex';
-  }
 </script>
 
 <div class="course-info">
