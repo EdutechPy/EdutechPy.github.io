@@ -113,17 +113,157 @@
   .episode-card a:hover {
     background-color: #218838;
   }
+
+  /* Header styles */
+  header {
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header .logo img {
+    height: 40px;
+  }
+
+  header .logo span {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  /* Menu styles */
+  #menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: #2563eb;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+  }
+
+  #menu li {
+    list-style: none;
+  }
+
+  #menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+  }
+
+  /* Hamburger button styles */
+  #menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  #menu-btn svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    #menu {
+      display: none;
+    }
+
+    #menu-btn {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 640px) {
+    #menu {
+      display: flex !important;
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      top: auto;
+      right: auto;
+      flex-direction: row;
+      gap: 6px;
+    }
+
+    #menu-btn {
+      display: none;
+    }
+  }
 </style>
 
 </head>
 <body>
 
-<header>
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="logo.png" alt="Logo EdutechPy" style="height: 40px;">
-    <span>EdutechPy | Aprende Python</span>
+<!-- Header -->
+<header style="background-color:#2563eb;color:white;" class="py-4 shadow-md sticky top-0 z-50">
+  <div style="max-width:1200px;margin:auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="logo.png" alt="Logo EdutechPy" style="height:40px;">
+      <span style="font-size:1.25rem;font-weight:bold;">EdutechPy | Aprende Python</span>
+    </div>
+    <!-- Botón hamburguesa -->
+    <button id="menu-btn" class="sm:hidden" aria-label="Abrir menú" style="background:none;border:none;outline:none;display:flex;align-items:center;cursor:pointer;">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:32px;height:32px;">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <!-- Menú de navegación -->
+    <nav>
+      <ul id="menu" style="display:none;position:absolute;top:64px;right:16px;background:#2563eb;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);padding:0.5rem 1rem;z-index:1000;flex-direction:column;gap:10px;min-width:150px;"
+        class="sm:flex sm:static sm:bg-transparent sm:shadow-none sm:rounded-none sm:top-auto sm:right-auto sm:relative sm:flex-row sm:gap-6">
+        <li><a href="index.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Inicio</a></li>
+        <li><a href="cursosnew.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Cursos</a></li>
+        <li><a href="recursopy.html" style="color:white;text-decoration:none;padding:8px 0;display:block;">Recursos</a></li>
+        <li><a href="#contacto" style="color:white;text-decoration:none;padding:8px 0;display:block;">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+<script>
+  // Menú hamburguesa funcionalidad
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  function toggleMenu() {
+    if (window.innerWidth < 640) {
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  }
+  btn.addEventListener('click', toggleMenu);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 640) {
+      menu.style.display = 'flex';
+    } else {
+      menu.style.display = 'none';
+    }
+  });
+  // Inicializa el estado correcto al cargar
+  if (window.innerWidth >= 640) {
+    menu.style.display = 'flex';
+  }
+</script>
 
 <div class="course-info">
   <h2>🐍 Fundamentos de Python</h2>
