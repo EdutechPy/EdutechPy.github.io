@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aprende Python - EdutechPy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      color: #fff;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+    }
+
+    nav {
+      width: 250px;
+      background-color: #2e2e2e;
+      color: white;
+      padding: 20px;
+    }
+
+    nav h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    nav ul li:hover {
+      color: white;
+      font-weight: bold;
+    }
+
+    section {
+      flex: 1;
+      padding: 30px;
+      background-color: white;
+      overflow-y: auto;
+    }
+
+    code {
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: block;
+      margin: 10px 0;
+    }
+
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="logo.png" alt="Logo EdutechPy" style="height: 40px;">
+    <span>EdutechPy | Aprende Python</span>
+  </div>
+</header>
+
+
+  <main>
+    <nav>
+      <h2>Temas Básicos</h2>
+      <ul>
+        <li onclick="mostrarContenido('print')">print()</li>
+        <li onclick="mostrarContenido('variables')">Variables</li>
+        <li onclick="mostrarContenido('tipos')">Tipos de datos</li>
+      </ul>
+    </nav>
+
+    <section id="contenido">
+      <h2>Bienvenido</h2>
+      <p>Haz clic en un tema a la izquierda para comenzar a aprender Python.</p>
+    </section>
+  </main>
+
+  <script>
+    const contenido = {
+      print: `
+        <h2>print()</h2>
+        <p>La función <code>print()</code> se usa para mostrar texto en pantalla.</p>
+        <pre><code>print("Hola, mundo!")</code></pre>
+        <p>Salida:</p>
+        <pre><code>Hola, mundo!</code></pre>
+      `,
+      variables: `
+        <h2>Variables</h2>
+        <p>Las variables se usan para guardar valores. No necesitas declarar el tipo.</p>
+        <pre><code>nombre = "Lucas"
+edad = 20
+print(nombre)
+print(edad)</code></pre>
+        <p>Salida:</p>
+        <pre><code>Lucas
+20</code></pre>
+      `,
+      tipos: `
+        <h2>Tipos de datos</h2>
+        <p>Los tipos más comunes en Python son:</p>
+        <ul>
+          <li><code>int</code>: números enteros</li>
+          <li><code>float</code>: números decimales</li>
+          <li><code>str</code>: cadenas de texto</li>
+          <li><code>bool</code>: valores lógicos (True, False)</li>
+        </ul>
+        <pre><code>numero = 10          # int
+pi = 3.14            # float
+texto = "Hola"       # str
+es_valido = True     # bool</code></pre>
+      `
+    };
+
+    function mostrarContenido(seccion) {
+      document.getElementById('contenido').innerHTML = contenido[seccion];
+    }
+  </script>
+
+</body>
+</html>

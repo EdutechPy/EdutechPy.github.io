@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EdutechPy</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="text-white py-6 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="logo.png" alt="Logo EdutechPy" class="h-10">
+        <h1 class="text-2xl font-bold"><a href="#" >EdutechPy</a></h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="cursosnew.html" class="hover:underline">Cursos</a></li>
+          <li><a href="recursopy.html" class="hover:underline">Recursos</a></li>
+          <li><a href="#nosotros" class="hover:underline">Nosotros</a></li>
+          <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-blue-50 py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-4">Aprendé a programar desde Paraguay</h2>
+      <p class="text-xl mb-6">Conocé nuestros cursos prácticos de HTML, CSS, JavaScript, Python, Java y más. Todo desde cero, orientado a proyectos reales.</p>
+      <a href="cursosnew.html" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Ver cursos</a>
+    </div>
+  </section>
+
+  <!-- Cursos -->
+  <section id="cursos" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-10">Nuestros Cursos</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">HTML & CSS</h4>
+          <p>Aprendé a crear páginas web modernas con diseño profesional desde cero.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">JavaScript</h4>
+          <p>Agregá interactividad, animaciones y lógica dinámica a tus sitios web.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">Python</h4>
+          <p>Fundamentos de programación, automatización, web scraping e IA básica.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">Java</h4>
+          <p>Programación orientada a objetos, lógica estructurada y desarrollo móvil básico.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">SQL y Bases de Datos</h4>
+          <p>Aprendé a guardar, consultar y manejar datos con bases relacionales.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow-md">
+          <h4 class="text-xl font-bold mb-2">Desarrollo Web Completo</h4>
+          <p>Desde el diseño front-end hasta el back-end, con proyectos prácticos paso a paso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos -->
+  <section id="recursos" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">Recursos Gratuitos</h3>
+      <p class="mb-6">Accedé a guías, PDF, mini proyectos, videos y más para complementar tu aprendizaje.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <h4 class="font-bold text-lg">Guía de HTML desde cero</h4>
+          <p>Aprendé todas las etiquetas básicas con ejemplos visuales.</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <h4 class="font-bold text-lg">Ejercicios de Python resueltos</h4>
+          <p>Desarrollá lógica resolviendo ejercicios paso a paso.</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <h4 class="font-bold text-lg">Mini proyectos en JavaScript</h4>
+          <p>Creá relojes, to-do lists, y otros proyectos para practicar.</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <h4 class="font-bold text-lg">Plantillas listas para usar</h4>
+          <p>Descargá sitios web editables para aprender con ejemplos reales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="bg-blue-100 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">¿Quiénes somos?</h3>
+      <p class="text-lg">EdutechPy es una iniciativa educativa paraguaya que busca formar a la próxima generación de desarrolladores y creadores digitales. Enseñamos de forma práctica, moderna y cercana a la realidad laboral.</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">Contacto</h3>
+      <p class="mb-4">¿Querés más información o tenés alguna duda? Escribinos por WhatsApp.</p>
+      <a href="https://wa.me/595991123456" class="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Contactar por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2025 EdutechPy. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

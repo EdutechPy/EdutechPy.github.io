@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>  EdutechPy</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <style>
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+  }
+
+  header {
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .course-info {
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .course-info h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  .course-info .meta {
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  .episodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .episode-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .episode-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .episode-card .status {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+  }
+
+  .episode-card p {
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+    color: #444;
+    flex: 1;
+  }
+
+  .episode-card a {
+    text-decoration: none;
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+
+  .episode-card.locked a {
+    background-color: #ccc;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .episode-card.completed .status {
+    color: #28a745;
+  }
+
+  .episode-card.locked .status {
+    color: #999;
+  }
+
+  .episode-card.available .status {
+    color: #007bff;
+  }
+
+  .episode-card a:hover {
+    background-color: #218838;
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="logo.png" alt="Logo EdutechPy" style="height: 40px;">
+    <span>EdutechPy | Aprende Python</span>
+  </div>
+</header>
+
+<div class="course-info">
+  <h2>🐍 Fundamentos de Python</h2>
+  <div class="meta">⏱️ 2h &nbsp;&nbsp; 🔰 Nivel: Principiante</div>
+  <p>Aprende las bases del lenguaje Python: variables, tipos de datos, condicionales y ciclos.</p>
+</div>
+
+<div class="episodes" id="episodes-container"></div>
+
+<script>
+  const episodios = [
+    { id: 1, titulo: "print()", desc: "Aprende a mostrar texto con la función print()." },
+    { id: 2, titulo: "Variables", desc: "Cómo crear y usar variables en Python correctamente." },
+    { id: 3, titulo: "Tipos de datos", desc: "Conoce strings, enteros, decimales y booleanos." },
+    { id: 4, titulo: "input()", desc: "Pide datos al usuario con input()." },
+    { id: 5, titulo: "Operadores", desc: "Usa operadores aritméticos y lógicos." },
+    { id: 6, titulo: "Condicionales", desc: "Controla el flujo con if, elif y else." },
+    { id: 7, titulo: "Ciclo while", desc: "Repite tareas mientras una condición sea verdadera." },
+    { id: 8, titulo: "Ciclo for", desc: "Itera sobre listas con for." },
+    { id: 9, titulo: "Listas", desc: "Agrupa múltiples datos en listas." },
+    { id: 10, titulo: "Funciones", desc: "Organiza tu código con funciones." },
+  ];
+
+  function marcarCompletado(n) {
+    localStorage.setItem("ep" + n, "completado");
+  }
+
+  function actualizarEpisodios() {
+    const contenedor = document.getElementById("episodes-container");
+    contenedor.innerHTML = "";
+
+    for (let i = 0; i < episodios.length; i++) {
+      const ep = episodios[i];
+      const prevCompletado = i === 0 || localStorage.getItem("ep" + i) === "completado";
+      const esteCompletado = localStorage.getItem("ep" + (i + 1)) === "completado";
+
+      const card = document.createElement("div");
+      card.className = "episode-card";
+      if (!prevCompletado) card.classList.add("locked");
+      else if (esteCompletado) card.classList.add("completed");
+      else card.classList.add("available");
+
+      const h3 = document.createElement("h3");
+      h3.textContent = `Episodio ${ep.id}: ${ep.titulo}`;
+
+      const status = document.createElement("div");
+      status.className = "status";
+      if (esteCompletado) status.textContent = "✅ Completado";
+      else if (prevCompletado) status.textContent = "🔓 Disponible";
+      else status.textContent = "🔒 Bloqueado";
+
+      const p = document.createElement("p");
+      p.textContent = ep.desc;
+
+      const a = document.createElement("a");
+      if (prevCompletado) {
+        a.href = `episodio${ep.id}.html`;
+        a.textContent = esteCompletado ? "Ver otra vez" : "Ver episodio";
+        a.onclick = () => marcarCompletado(ep.id);
+      } else {
+        a.href = "#";
+        a.textContent = "Bloqueado";
+      }
+
+      card.appendChild(h3);
+      card.appendChild(status);
+      card.appendChild(p);
+      card.appendChild(a);
+      contenedor.appendChild(card);
+    }
+  }
+
+  actualizarEpisodios();
+</script>
+
+</body>
+</html>
