@@ -17,22 +17,38 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Header -->
-  <header class="text-white py-6 shadow-md">
+  <header class="text-white py-4 shadow-md bg-blue-600 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
       <div class="flex items-center gap-4">
         <img src="logo.png" alt="Logo EdutechPy" class="h-10">
         <h1 class="text-2xl font-bold"><a href="#">EdutechPy</a></h1>
       </div>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="sm:hidden focus:outline-none" aria-label="Abrir menú">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menú de navegación -->
       <nav>
-        <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-base">
-          <li><a href="cursosnew.html" class="hover:underline">Cursos</a></li>
-          <li><a href="recursopy.html" class="hover:underline">Recursos</a></li>
-          <li><a href="#nosotros" class="hover:underline">Nosotros</a></li>
-          <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        <ul id="menu" class="hidden absolute top-16 right-4 bg-blue-600 rounded shadow-lg sm:static sm:flex sm:flex-row sm:space-x-6 sm:bg-transparent sm:shadow-none sm:rounded-none sm:top-auto sm:right-auto sm:relative sm:items-center text-base flex-col space-y-2 sm:space-y-0 mt-2 sm:mt-0">
+          <li><a href="cursosnew.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Cursos</a></li>
+          <li><a href="recursopy.html" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Recursos</a></li>
+          <li><a href="#nosotros" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Nosotros</a></li>
+          <li><a href="#contacto" class="block px-4 py-2 hover:bg-blue-700 rounded sm:hover:bg-transparent">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <script>
+    // filepath: c:\Users\Pc-1\Documents\GitHub\EdutechPy.github.io\index.html
+    // Menú hamburguesa funcionalidad
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero -->
   <section class="bg-blue-50 py-20">
