@@ -2,165 +2,82 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fundamentos de Python | EdutechPy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Episodio 1: Configura tu entorno | EdutechPy</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9fafb;
-      padding: 30px 20px;
       margin: 0;
-      color: #111827;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
     }
-
     header {
-      text-align: center;
-      margin-bottom: 40px;
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 1.2rem;
     }
-
     header h1 {
-      font-size: 2.8rem;
-      color: #1e40af;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 1.3rem;
     }
-
-    header p {
-      font-size: 1.1rem;
-      color: #6b7280;
+    .container {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 2rem auto;
     }
-
-    .section {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 25px 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    h2 {
+      margin-top: 0;
     }
-
-    .section h2 {
-      font-size: 1.5rem;
-      color: #1e3a8a;
-      margin-bottom: 15px;
+    .video-wrapper {
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
     }
-
-    .section p {
-      font-size: 1rem;
-      color: #374151;
-      line-height: 1.6;
-    }
-
-    code {
-      background-color: #e0e7ff;
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-family: monospace;
-    }
-
-    .example {
-      background-color: #f3f4f6;
-      border-left: 5px solid #2563eb;
-      padding: 15px;
-      margin-top: 10px;
+    iframe, video {
       border-radius: 8px;
-      font-family: monospace;
-      white-space: pre-wrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      background: #000;
     }
-
-    .btn-volver {
+    .back-link {
       display: inline-block;
-      margin: 40px auto 0;
-      text-align: center;
+      margin-top: 1.5rem;
       background: #2563eb;
       color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s;
     }
-
-    .btn-volver:hover {
-      background: #1e40af;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #9ca3af;
-      font-size: 0.9rem;
+    .back-link:hover {
+      background: #1746a0;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>🐍 Fundamentos de Python</h1>
-    <p>Tu primer paso para convertirte en programador con uno de los lenguajes más usados del mundo.</p>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="logo.png" alt="Logo EdutechPy" style="height: 36px;">
+      <span style="font-size: 1.05rem; font-weight: bold;">EdutechPy | Aprende Python</span>
+    </div>
   </header>
-
-  <div class="section">
-    <h2>¿Qué aprenderás?</h2>
-    <p>En este módulo aprenderás los conceptos esenciales de la programación usando Python:</p>
-    <ul>
-      <li>Cómo escribir tu primer código en Python.</li>
-      <li>Variables, tipos de datos y operadores.</li>
-      <li>Estructuras de control: condicionales y bucles.</li>
-      <li>Entrada y salida de datos.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>📌 Tu primer programa en Python</h2>
-    <p>Vamos a empezar con algo simple: mostrar un mensaje en pantalla.</p>
-    <div class="example">
-print("¡Hola, mundo!")
+  <div class="container">
+    <h2>Episodio 1: Configura tu entorno</h2>
+    <p>Instala Python y prepara tu editor para empezar a programar.</p>
+    <div class="video-wrapper">
+      <!-- Reemplaza el src con el enlace de tu video (YouTube, Vimeo, o archivo local) -->
+      <iframe src="1er projecto.mp4" title="Configura tu entorno Python" frameborder="0" allowfullscreen></iframe>
     </div>
-    <p>Este código le dice a Python que imprima el texto entre comillas.</p>
+    <a href="newmarcado.html" class="back-link">← Volver al curso</a>
   </div>
-
-  <div class="section">
-    <h2>🧠 Tipos de datos</h2>
-    <p>En Python, puedes guardar diferentes tipos de información:</p>
-    <ul>
-      <li><code>int</code>: Números enteros (ej: 5, -3)</li>
-      <li><code>float</code>: Números con decimales (ej: 3.14)</li>
-      <li><code>str</code>: Texto (ej: "Hola")</li>
-      <li><code>bool</code>: Verdadero o falso (<code>True</code> / <code>False</code>)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🔁 Condicionales y ciclos</h2>
-    <p>Las estructuras de control permiten que el programa tome decisiones o repita acciones:</p>
-
-    <p><strong>Condicional:</strong></p>
-    <div class="example">
-edad = 18
-if edad >= 18:
-    print("Eres mayor de edad.")
-    </div>
-
-    <p><strong>Bucle:</strong></p>
-    <div class="example">
-for i in range(3):
-    print("Hola")
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>🎯 Actividad práctica</h2>
-    <p>Escribe un programa que pregunte tu nombre y edad, y que responda si eres mayor o menor de edad.</p>
-    <p>Tip: Usa <code>input()</code> y <code>if</code>.</p>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="newmarcado.html" class="btn-volver">⬅️ Volver al curso</a>
-  </div>
-
-  <footer>
-    © 2025 EdutechPy – Aprende haciendo 🚀
-  </footer>
-
 </body>
 </html>
