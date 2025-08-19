@@ -95,10 +95,17 @@
     <nav>
       <h2>Temas Básicos</h2>
       <ul>
-        <li onclick="mostrarContenido('configuracion')">Configuración de entorno</li>
+        <li onclick="mostrarContenido('configura')">Configura tu entorno</li>
         <li onclick="mostrarContenido('print')">print()</li>
         <li onclick="mostrarContenido('variables')">Variables</li>
         <li onclick="mostrarContenido('tipos')">Tipos de datos</li>
+        <li onclick="mostrarContenido('input')">input()</li>
+        <li onclick="mostrarContenido('operadores')">Operadores</li>
+        <li onclick="mostrarContenido('condicionales')">Condicionales</li>
+        <li onclick="mostrarContenido('while')">Ciclo while</li>
+        <li onclick="mostrarContenido('for')">Ciclo for</li>
+        <li onclick="mostrarContenido('listas')">Listas</li>
+        <li onclick="mostrarContenido('funciones')">Funciones</li>
       </ul>
     </nav>
 
@@ -110,9 +117,9 @@
 
   <script>
   const contenido = {
-    configuracion: `
-      <h2>Configuración de entorno</h2>
-      <p>Antes de comenzar a programar en Python, necesitas instalar y configurar tu entorno de desarrollo. Aquí tienes los pasos recomendados:</p>
+    configura: `
+      <h2>Configura tu entorno</h2>
+      <p>Instala Python y prepara tu editor para empezar a programar.</p>
       <ol>
         <li>
           <strong>Descargar Python:</strong>
@@ -202,6 +209,128 @@ print(edad)</code></pre>
 pi = 3.14            # float
 texto = "Hola"       # str
 es_valido = True     # bool</code></pre>
+    `,
+    input: `
+      <h2>input()</h2>
+      <p>La función <code>input()</code> se utiliza para obtener datos del usuario. Todo lo que ingreses se recibe como texto.</p>
+      <h3>Ejemplo básico:</h3>
+      <pre><code>nombre = input("¿Cuál es tu nombre? ")
+print("Hola,", nombre)</code></pre>
+      <p>Salida:</p>
+      <pre><code>¿Cuál es tu nombre? Lucas
+Hola, Lucas</code></pre>
+      <h3>Convertir tipos:</h3>
+      <pre><code>edad = int(input("¿Cuántos años tienes? "))
+print("El próximo año tendrás", edad + 1, "años")</code></pre>
+      <p>Salida:</p>
+      <pre><code>¿Cuántos años tienes? 20
+El próximo año tendrás 21 años</code></pre>
+      <h3>Recursos útiles:</h3>
+      <ul>
+        <li><a href="https://docs.python.org/es/3/library/functions.html#input" target="_blank">Documentación oficial de input()</a></li>
+        <li><a href="https://www.youtube.com/watch?v=VIDEO_ID_INPUT" target="_blank">Video: Cómo usar input() en Python</a></li>
+      </ul>
+    `,
+    operadores: `
+      <h2>Operadores</h2>
+      <p>Los operadores te permiten realizar operaciones en Python. Los más comunes son:</p>
+      <ul>
+        <li><code>+</code>: Suma</li>
+        <li><code>-</code>: Resta</li>
+        <li><code>*</code>: Multiplicación</li>
+        <li><code>/</code>: División</li>
+        <li><code>%</code>: Módulo (resto de la división)</li>
+        <li><code>**</code>: Exponente</li>
+        <li><code>//</code>: División entera</li>
+      </ul>
+      <h3>Ejemplos:</h3>
+      <pre><code>a = 10
+b = 3
+print("Suma:", a + b)
+print("Resta:", a - b)
+print("Multiplicación:", a * b)
+print("División:", a / b)
+print("Módulo:", a % b)
+print("Exponente:", a ** b)
+print("División entera:", a // b)</code></pre>
+      <p>Salida:</p>
+      <pre><code>Suma: 13
+Resta: 7
+Multiplicación: 30
+División: 3.3333333333333335
+Módulo: 1
+Exponente: 1000
+División entera: 3</code></pre>
+    `,
+    condicionales: `
+      <h2>Condicionales</h2>
+      <p>Las estructuras condicionales te permiten ejecutar código basado en condiciones. Las más comunes son:</p>
+      <ul>
+        <li><code>if</code>: Si</li>
+        <li><code>elif</code>: Sino si</li>
+        <li><code>else</code>: Sino</li>
+      </ul>
+      <h3>Ejemplo:</h3>
+      <pre><code>edad = 18
+if edad &gt;= 18:
+    print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")</code></pre>
+      <p>Salida:</p>
+      <pre><code>Eres mayor de edad</code></pre>
+    `,
+    while: `
+      <h2>Ciclo while</h2>
+      <p>El ciclo <code>while</code> repite un bloque de código mientras una condición sea verdadera.</p>
+      <h3>Ejemplo:</h3>
+      <pre><code>contador = 0
+while contador &lt; 5:
+    print("Número:", contador)
+    contador += 1</code></pre>
+      <p>Salida:</p>
+      <pre><code>Número: 0
+Número: 1
+Número: 2
+Número: 3
+Número: 4</code></pre>
+    `,
+    for: `
+      <h2>Ciclo for</h2>
+      <p>El ciclo <code>for</code> se utiliza para iterar sobre una secuencia (como una lista) y ejecutar un bloque de código en cada iteración.</p>
+      <h3>Ejemplo:</h3>
+      <pre><code>nombres = ["Ana", "Luis", "Pedro"]
+for nombre in nombres:
+    print("Hola,", nombre)</code></pre>
+      <p>Salida:</p>
+      <pre><code>Hola, Ana
+Hola, Luis
+Hola, Pedro</code></pre>
+    `,
+    listas: `
+      <h2>Listas</h2>
+      <p>Las listas son colecciones de elementos. Pueden contener diferentes tipos de datos y su tamaño puede cambiar.</p>
+      <h3>Ejemplo:</h3>
+      <pre><code>frutas = ["manzana", "banana", "cereza"]
+print("Primera fruta:", frutas[0])
+print("Segunda fruta:", frutas[1])
+print("Todas las frutas:", frutas)</code></pre>
+      <p>Salida:</p>
+      <pre><code>Primera fruta: manzana
+Segunda fruta: banana
+Todas las frutas: ['manzana', 'banana', 'cereza']</code></pre>
+    `,
+    funciones: `
+      <h2>Funciones</h2>
+      <p>Las funciones son bloques de código que realizan una tarea específica y pueden ser reutilizadas. Se definen con la palabra clave <code>def</code>.</p>
+      <h3>Ejemplo:</h3>
+      <pre><code>def saludar(nombre):
+    print("Hola,", nombre)
+
+saludar("Ana")
+saludar("Luis")</code></pre>
+      <p>Salida:</p>
+      <pre><code>Hola, Ana
+Hola, Luis</code></pre>
     `
   };
 
