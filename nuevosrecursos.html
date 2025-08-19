@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursos de Cursos | EdutechPy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
+    }
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .volver-btn {
+      background: #2563eb;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s;
+      position: absolute;
+      right: 1.2rem;
+      top: 1.1rem;
+      border: 1px solid #fff3;
+    }
+    .volver-btn:hover {
+      background: #1746a0;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 2rem 1rem;
+    }
+    .recursos-titulo {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 2.2rem;
+      letter-spacing: -1px;
+    }
+    .recursos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+    }
+    .recurso-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 220px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1.5px solid #e6eaff;
+      position: relative;
+    }
+    .recurso-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(37,99,235,0.16), 0 2px 8px 0 rgba(0,0,0,0.06);
+      transform: translateY(-4px) scale(1.02);
+      border-color: #b3c7fa;
+    }
+    .recurso-card .curso-titulo {
+      margin: 0 0 0.7rem 0;
+      font-size: 1.25rem;
+      color: #2563eb;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .recurso-card .curso-meta {
+      font-size: 0.98rem;
+      color: #666;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .recurso-card .curso-desc {
+      margin: 0 0 1.2rem 0;
+      font-size: 1.05rem;
+      color: #444;
+      flex: 1;
+      line-height: 1.5;
+    }
+    .recurso-card a {
+      align-self: flex-end;
+      background: linear-gradient(90deg, #2563eb 80%, #1746a0 100%);
+      color: white;
+      padding: 7px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+      border: none;
+      outline: none;
+      margin-top: 0.5rem;
+      letter-spacing: 0.2px;
+    }
+    .recurso-card a:hover {
+      background: linear-gradient(90deg, #1746a0 80%, #2563eb 100%);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+    }
+    @media (max-width: 700px) {
+      .recursos-titulo {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+      }
+      .recursos-grid {
+        gap: 1.1rem;
+      }
+      .recurso-card {
+        padding: 1.2rem 0.7rem 0.9rem 0.7rem;
+        min-height: 140px;
+      }
+      main {
+        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="logo.png" alt="Logo EdutechPy" style="height: 36px;">
+      <span style="font-size: 1.05rem; font-weight: bold;">EdutechPy | Recursos de Cursos</span>
+    </div>
+    <a href="index.html" class="volver-btn">Volver</a>
+  </header>
+  <main>
+    <div class="recursos-titulo">Elige un curso para ver sus recursos</div>
+    <div class="recursos-grid">
+      <div class="recurso-card">
+        <div class="curso-titulo">🐍 Fundamentos de Python</div>
+        <div class="curso-meta">⏱️ 1h 30min &nbsp; 🔰 Principiante</div>
+        <div class="curso-desc">Tu primer paso para convertirte en programador con uno de los lenguajes más usados del mundo.</div>
+        <a href="recursopy.html">Ver recursos</a>
+      </div>
+      <div class="recurso-card">
+        <div class="curso-titulo">🌐 HTML desde Cero</div>
+        <div class="curso-meta">⏱️ 2h &nbsp; 🔰 Principiante</div>
+        <div class="curso-desc">Aprende a crear la estructura de cualquier sitio web con HTML. Ideal para quienes empiezan desde cero.</div>
+        <a href="#">Ver recursos</a>
+      </div>
+      <div class="recurso-card">
+        <div class="curso-titulo">🎨 CSS para Principiantes</div>
+        <div class="curso-meta">⏱️ 2h 30min &nbsp; 🔶 Intermedio</div>
+        <div class="curso-desc">Aplica estilos atractivos, colores, fuentes, layouts flexibles y crea diseños modernos y profesionales.</div>
+        <a href="#">Ver recursos</a>
+      </div>
+      <div class="recurso-card">
+        <div class="curso-titulo">⚙️ JavaScript Básico</div>
+        <div class="curso-meta">⏱️ 3h &nbsp; 🔶 Intermedio</div>
+        <div class="curso-desc">Haz tus páginas interactivas: botones dinámicos, validaciones de formularios y más con JS.</div>
+        <a href="#">Ver recursos</a>
+      </div>
+      <div class="recurso-card">
+        <div class="curso-titulo">🔧 Fundamentos de Git y GitHub</div>
+        <div class="curso-meta">⏱️ 1h 15min &nbsp; 🔰 Principiante</div>
+        <div class="curso-desc">Controla versiones de tus proyectos, colabora en equipo y publica tu trabajo en la nube con Git y GitHub.</div>
+        <a href="#">Ver recursos</a>
+      </div>
+      <div class="recurso-card">
+        <div class="curso-titulo">🚀 Proyecto Final: Tu Primera Web</div>
+        <div class="curso-meta">⏱️ 2h &nbsp; 🔶 Intermedio</div>
+        <div class="curso-desc">Aplica todo lo aprendido creando un proyecto real: tu primera página web completa.</div>
+        <a href="#">Ver recursos</a>
+      </div>
+      <!-- Agrega más tarjetas de cursos según tus necesidades -->
+    </div>
+  </main>
+</body>
+</html>
