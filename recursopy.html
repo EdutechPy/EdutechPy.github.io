@@ -109,75 +109,105 @@
   </main>
 
   <script>
-    const contenido = {
-      configuracion: `
-        <h2>Configuración de entorno</h2>
-        <p>Antes de comenzar a programar en Python, necesitas instalar algunos programas:</p>
-        <ul>
-          <li>
-            <strong>Python:</strong>
-            <a href="https://www.python.org/downloads/" target="_blank">Descargar aquí</a>
-          </li>
-          <li>
-            <strong>Visual Studio Code:</strong>
-            <a href="https://code.visualstudio.com/" target="_blank">Descargar aquí</a>
-          </li>
-          <li>
-            <strong>Extensión de Python para VS Code:</strong>
-            <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank">Instalar aquí</a>
-          </li>
-          <li>
-            <strong>Guía PDF de instalación:</strong>
-            <a href="guia-instalacion-python.pdf" target="_blank">Ver guía</a>
-          </li>
-        </ul>
-        <p>Pasos básicos:</p>
-        <ol>
-          <li>Descarga e instala Python desde la página oficial.</li>
-          <li>Instala Visual Studio Code como editor de código.</li>
-          <li>Abre VS Code y agrega la extensión de Python.</li>
-          <li>Verifica la instalación ejecutando <code>python --version</code> en la terminal.</li>
-        </ol>
-        <p>Video recomendado:</p>
-        <iframe width="100%" height="220" src="https://www.youtube.com/embed/5Pm-WMovvt4?si=mRplPAnudKY11wOP" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-      `,
-      print: `
-        <h2>print()</h2>
-        <p>La función <code>print()</code> se usa para mostrar texto en pantalla.</p>
-        <pre><code>print("Hola, mundo!")</code></pre>
-        <p>Salida:</p>
-        <pre><code>Hola, mundo!</code></pre>
-      `,
-      variables: `
-        <h2>Variables</h2>
-        <p>Las variables se usan para guardar valores. No necesitas declarar el tipo.</p>
-        <pre><code>nombre = "Lucas"
+  const contenido = {
+    configuracion: `
+      <h2>Configuración de entorno</h2>
+      <p>Antes de comenzar a programar en Python, necesitas instalar y configurar tu entorno de desarrollo. Aquí tienes los pasos recomendados:</p>
+      <ol>
+        <li>
+          <strong>Descargar Python:</strong>
+          <br>
+          <a href="https://www.python.org/downloads/" target="_blank">Sitio oficial de Python</a>
+          <br>
+          <small>Elige la versión recomendada para tu sistema operativo.</small>
+        </li>
+        <li>
+          <strong>Instalar Visual Studio Code:</strong>
+          <br>
+          <a href="https://code.visualstudio.com/" target="_blank">Descargar VS Code</a>
+          <br>
+          <small>Editor de código ligero y potente, ideal para Python.</small>
+        </li>
+        <li>
+          <strong>Agregar la extensión de Python en VS Code:</strong>
+          <br>
+          <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank">Extensión oficial</a>
+          <br>
+          <small>Permite ejecutar y depurar código Python directamente en VS Code.</small>
+        </li>
+        <li>
+          <strong>Verificar la instalación:</strong>
+          <br>
+          Abre la terminal y ejecuta <code>python --version</code> para comprobar que Python está instalado correctamente.
+        </li>
+      </ol>
+      <p><strong>Guía PDF paso a paso:</strong> <a href="guia-instalacion-python.pdf" target="_blank">Descargar guía</a></p>
+      <p><strong>Consejos útiles:</strong></p>
+      <ul>
+        <li>Instala Python marcando la opción "Add Python to PATH" durante la instalación.</li>
+        <li>Actualiza VS Code y la extensión de Python regularmente.</li>
+        <li>Si tienes problemas, revisa la documentación oficial o busca tutoriales en YouTube.</li>
+      </ul>
+    `,
+    print: `
+      <h2>print()</h2>
+      <p>La función <code>print()</code> se usa para mostrar información en la consola. Es fundamental para depurar y entender el flujo de tu programa.</p>
+      <h3>Ejemplo básico:</h3>
+      <pre><code>print("Hola, mundo!")</code></pre>
+      <p>Salida:</p>
+      <pre><code>Hola, mundo!</code></pre>
+      <h3>Imprimir varios valores:</h3>
+      <pre><code>print("Edad:", 20)
+print("Suma:", 5 + 3)</code></pre>
+      <p>Salida:</p>
+      <pre><code>Edad: 20
+Suma: 8</code></pre>
+      <h3>Imprimir variables:</h3>
+      <pre><code>nombre = "Ana"
+print("Bienvenida,", nombre)</code></pre>
+      <p>Salida:</p>
+      <pre><code>Bienvenida, Ana</code></pre>
+      <h3>Imprimir con formato:</h3>
+      <pre><code>edad = 25
+print(f"Tienes {edad} años")</code></pre>
+      <p>Salida:</p>
+      <pre><code>Tienes 25 años</code></pre>
+      <h3>Recursos útiles:</h3>
+      <ul>
+        <li><a href="https://docs.python.org/es/3/library/functions.html#print" target="_blank">Documentación oficial de print()</a></li>
+        <li><a href="https://www.youtube.com/watch?v=VIDEO_ID_PRINT" target="_blank">Video: Cómo usar print() en Python</a></li>
+      </ul>
+    `,
+    variables: `
+      <h2>Variables</h2>
+      <p>Las variables se usan para guardar valores. No necesitas declarar el tipo.</p>
+      <pre><code>nombre = "Lucas"
 edad = 20
 print(nombre)
 print(edad)</code></pre>
-        <p>Salida:</p>
-        <pre><code>Lucas
+      <p>Salida:</p>
+      <pre><code>Lucas
 20</code></pre>
-      `,
-      tipos: `
-        <h2>Tipos de datos</h2>
-        <p>Los tipos más comunes en Python son:</p>
-        <ul>
-          <li><code>int</code>: números enteros</li>
-          <li><code>float</code>: números decimales</li>
-          <li><code>str</code>: cadenas de texto</li>
-          <li><code>bool</code>: valores lógicos (True, False)</li>
-        </ul>
-        <pre><code>numero = 10          # int
+    `,
+    tipos: `
+      <h2>Tipos de datos</h2>
+      <p>Los tipos más comunes en Python son:</p>
+      <ul>
+        <li><code>int</code>: números enteros</li>
+        <li><code>float</code>: números decimales</li>
+        <li><code>str</code>: cadenas de texto</li>
+        <li><code>bool</code>: valores lógicos (True, False)</li>
+      </ul>
+      <pre><code>numero = 10          # int
 pi = 3.14            # float
 texto = "Hola"       # str
 es_valido = True     # bool</code></pre>
-      `
-    };
+    `
+  };
 
-    function mostrarContenido(seccion) {
-      document.getElementById('contenido').innerHTML = contenido[seccion];
-    }
+  function mostrarContenido(seccion) {
+    document.getElementById('contenido').innerHTML = contenido[seccion];
+  }
   </script>
 
 </body>
