@@ -58,6 +58,14 @@
       font-weight: bold;
     }
 
+    nav ul li.activo {
+      background: #fff;
+      color: #2563eb;
+      font-weight: bold;
+      border-radius: 6px;
+      padding-left: 8px;
+    }
+
     section {
       flex: 1;
       padding: 30px;
@@ -344,9 +352,17 @@ Hola, Luis</code></pre>
 
   function mostrarContenido(seccion) {
     document.getElementById('contenido').innerHTML = contenido[seccion];
+    // Quitar la clase activo de todos los temas
+    document.querySelectorAll('nav ul li').forEach(li => li.classList.remove('activo'));
+    // Poner la clase activo al seleccionado
+    document.querySelectorAll('nav ul li').forEach(li => {
+      if (li.getAttribute('onclick') && li.getAttribute('onclick').includes(seccion)) {
+        li.classList.add('activo');
+      }
+    });
   }
 
-  // Mostrar sección según parámetro URL
+  // Mostrar sección según parámetro URL y resaltar el tema
   window.onload = function() {
     const params = new URLSearchParams(window.location.search);
     const tema = params.get('tema');
