@@ -59,6 +59,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 0.8rem;
+    align-items: flex-start; /* Alinea todos los elementos arriba */
   }
 
   .episode-card h3 {
@@ -67,6 +68,9 @@
   }
 
   .episode-card .status {
+    min-height: 1.5em; /* Alto fijo para el status */
+    display: flex;
+    align-items: center;
     font-size: 0.85rem;
     font-weight: 500;
     color: #666;
