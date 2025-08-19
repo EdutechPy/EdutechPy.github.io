@@ -57,27 +57,28 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: flex-start; /* Alinea todo arriba */
     gap: 0.8rem;
-    align-items: flex-start; /* Alinea todos los elementos arriba */
+    height: 260px; /* Ajusta según tu diseño */
   }
 
   .episode-card h3 {
     margin: 0;
     font-size: 1.2rem;
-    min-height: 2.6em;      /* Alto fijo para todos los títulos */
+    min-height: 2.6em;
     display: flex;
-    align-items: center;
-    overflow: hidden;       /* Evita que el texto empuje el resto */
+    align-items: flex-start; /* Alinea el texto arriba */
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;    /* Permite salto de línea si es necesario */
+    white-space: normal;
   }
 
   .episode-card .status {
     min-height: 1.5em;
-    width: 140px;         /* ancho fijo para todos los estados */
+    width: 140px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinea el estado arriba */
     justify-content: center;
     text-align: center;
     margin-bottom: 0.2em;
