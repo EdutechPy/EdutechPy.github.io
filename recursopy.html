@@ -337,6 +337,15 @@ Hola, Luis</code></pre>
   function mostrarContenido(seccion) {
     document.getElementById('contenido').innerHTML = contenido[seccion];
   }
+
+  // Mostrar sección según parámetro URL
+  window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const tema = params.get('tema');
+    if (tema && contenido[tema]) {
+      mostrarContenido(tema);
+    }
+  };
   </script>
 
 </body>
