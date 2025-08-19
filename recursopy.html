@@ -95,6 +95,7 @@
     <nav>
       <h2>Temas Básicos</h2>
       <ul>
+        <li onclick="mostrarContenido('configuracion')">Configuración de entorno</li>
         <li onclick="mostrarContenido('print')">print()</li>
         <li onclick="mostrarContenido('variables')">Variables</li>
         <li onclick="mostrarContenido('tipos')">Tipos de datos</li>
@@ -109,6 +110,37 @@
 
   <script>
     const contenido = {
+      configuracion: `
+        <h2>Configuración de entorno</h2>
+        <p>Antes de comenzar a programar en Python, necesitas instalar algunos programas:</p>
+        <ul>
+          <li>
+            <strong>Python:</strong>
+            <a href="https://www.python.org/downloads/" target="_blank">Descargar aquí</a>
+          </li>
+          <li>
+            <strong>Visual Studio Code:</strong>
+            <a href="https://code.visualstudio.com/" target="_blank">Descargar aquí</a>
+          </li>
+          <li>
+            <strong>Extensión de Python para VS Code:</strong>
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank">Instalar aquí</a>
+          </li>
+          <li>
+            <strong>Guía PDF de instalación:</strong>
+            <a href="guia-instalacion-python.pdf" target="_blank">Ver guía</a>
+          </li>
+        </ul>
+        <p>Pasos básicos:</p>
+        <ol>
+          <li>Descarga e instala Python desde la página oficial.</li>
+          <li>Instala Visual Studio Code como editor de código.</li>
+          <li>Abre VS Code y agrega la extensión de Python.</li>
+          <li>Verifica la instalación ejecutando <code>python --version</code> en la terminal.</li>
+        </ol>
+        <p>Video recomendado:</p>
+        <iframe width="100%" height="220" src="https://www.youtube.com/embed/5Pm-WMovvt4?si=mRplPAnudKY11wOP" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      `,
       print: `
         <h2>print()</h2>
         <p>La función <code>print()</code> se usa para mostrar texto en pantalla.</p>
